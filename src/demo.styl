@@ -1,0 +1,126 @@
+*
+	margin 0
+	padding 0
+	box-sizing border-box
+.group:before, .group:after
+	content ""
+	display table
+.group:after
+	clear both
+.group
+	zoom 1
+
+color_white = #ffffff
+color_smoke = #ecf0f1
+color_night = #34495e
+color_silver = #bdc3c7
+color_blue = #2980b9
+color_green = #27ae60
+color_orange = #d35400
+color_yellow = #f1c40f
+color_red = #c0392b
+
+random(min,max)
+	return floor(math(0, 'random')*(max - min + 1) + min)
+
+randomColor()
+	gen_color = random(100, 200)
+	return rgb(gen_color, gen_color, gen_color)
+
+body
+	background-color color_white
+	font-family arial
+	font-size 100%
+
+.item
+	padding 10px
+	width 25%
+	float left
+	.block
+		padding-bottom 100%
+		border-radius 6px
+	for i in (1..60)
+		&:nth-child({i})
+			.block
+				background-color randomColor()
+
+
+header
+	text-align center
+	background-color color_night
+	.wrapper
+		margin 0 auto
+		padding 64px 10px
+		width 960px
+		color color_smoke
+	h1
+		margin-bottom 10px
+		font-size 3em
+		font-weight bold
+		line-height 1em
+	p
+		margin-bottom 20px
+	.button
+		padding 10px 20px
+		display inline-block
+		color color_yellow
+		text-decoration none
+		border 2px solid color_yellow
+		border-radius 6px
+
+.section
+	.wrapper
+		margin 0 auto
+		padding 52px 0
+		width 960px
+	&.section-code
+		background-color color_smoke
+		.wrapper
+			padding 52px 10px
+		p, code
+			margin-bottom 20px
+		a
+			color color_blue
+		code
+			padding 20px
+			display block
+			background-color #fff
+			border-radius 6px
+			border 2px solid color_silver
+			&:last-child
+				margin-bottom 0
+footer
+	background-color color_night
+	text-align right
+	.wrapper
+		margin 0 auto
+		padding 32px 10px
+		width 960px
+		font-size 0.875em
+		color color_smoke
+	a
+		color color_smoke
+		text-decoration none
+		border-bottom 1px solid rgba(color_smoke,.5)
+
+@media screen and (max-width: 960px)
+	body
+		min-width 320px
+	header
+		.wrapper
+			margin 0
+			width 100%
+	.section
+		.wrapper
+			margin 0
+			width 100%
+	footer
+		.wrapper
+			margin 0
+			width 100%
+				
+@media screen and (max-width: 480px)
+	.section
+		.wrapper
+			margin 0
+			width 100%

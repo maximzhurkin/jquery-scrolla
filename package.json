@@ -1,0 +1,33 @@
+{
+  "name": "jquery-screamer",
+  "version": "1.0.0",
+  "description": "Plugin for custom alerts",
+  "main": "clamo.jquery.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maximzhurkin/jquery-screamer.git"
+  },
+  "author": "Max Zhurkin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/maximzhurkin/jquery-screamer/issues"
+  },
+  "homepage": "https://github.com/maximzhurkin/jquery-screamer#readme",
+  "devDependencies": {
+    "browser-sync": "^2.17.0",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-cssnano": "^2.1.2",
+    "gulp-jshint": "^2.0.1",
+    "gulp-plumber": "^1.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-stylus": "^2.5.0",
+    "gulp-uglify": "^2.0.0",
+    "gulp-watch": "^4.3.10",
+    "jshint": "^2.9.3"
+  }
+}

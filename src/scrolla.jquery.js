@@ -3,8 +3,14 @@
 (function($){
 	jQuery.fn.scrolla = function(options){
 		options = $.extend({
-			// Options
+			mobile: false
 		}, options);
+
+		if (options.mobile === false) {
+			if(/Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+				return false;
+			}
+		} 
 		
 		var elements = this;
 

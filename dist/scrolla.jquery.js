@@ -21,11 +21,17 @@
 
 			$.each(elements, function() {
 				var elementAnimation = $(this).data('animate');
+				var elementOffset = $(this).data('offset');
 				var elementDuration = $(this).data('duration');
 				var elementDelay = $(this).data('delay');
 				var elementHeight = $(this).outerHeight();
 				var elementTop = $(this).offset().top;
 				var elementBottom = (elementTop + elementHeight);
+
+				if (elementOffset) {
+					var elementTop = elementTop + elementOffset;
+					var elementBottom = elementBottom - elementOffset;
+				}
 
 				$(this).css({'-webkit-animation-duration': elementDuration, 'animation-duration': elementDuration});
 				$(this).css({'-webkit-animation-delay': elementDelay, 'animation-delay': elementDelay});

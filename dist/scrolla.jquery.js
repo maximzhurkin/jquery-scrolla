@@ -3,7 +3,8 @@
 (function($){
 	jQuery.fn.scrolla = function(options){
 		options = $.extend({
-			mobile: false
+			mobile: false,
+			once: false
 		}, options);
 
 		if (options.mobile === false) {
@@ -42,9 +43,11 @@
 					$(this).addClass('animated');
 				}
 				else {
-					$(this).css('visibility', 'hidden');
-					$(this).removeClass(elementAnimation);
-					$(this).removeClass('animated');
+					if (options.once === false) {
+						$(this).css('visibility', 'hidden');
+						$(this).removeClass(elementAnimation);
+						$(this).removeClass('animated');
+					}
 				}
 			});
 		}

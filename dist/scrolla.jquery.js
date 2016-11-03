@@ -25,17 +25,19 @@
 				var elementOffset = $(this).data('offset');
 				var elementDuration = $(this).data('duration');
 				var elementDelay = $(this).data('delay');
+				var elementIteration = $(this).data('iteration');
 				var elementHeight = $(this).outerHeight();
 				var elementTop = $(this).offset().top;
 				var elementBottom = (elementTop + elementHeight);
 
 				if (elementOffset) {
-					var elementTop = elementTop + elementOffset;
-					var elementBottom = elementBottom - elementOffset;
+					elementTop = elementTop + elementOffset;
+					elementBottom = elementBottom - elementOffset;
 				}
 
 				$(this).css({'-webkit-animation-duration': elementDuration, 'animation-duration': elementDuration});
 				$(this).css({'-webkit-animation-delay': elementDelay, 'animation-delay': elementDelay});
+				$(this).css({'-webkit-animation-iteration-count': elementIteration, 'animation-iteration-count': elementIteration});
 		 
 				if ((elementBottom >= viewTop) && (elementTop <= viewBottom)) {
 					$(this).css('visibility', 'visible');

@@ -24,7 +24,6 @@ gulp.task('sync', function (){
 
 gulp.task('js', function(){
 	gulp.src('src/*.js')
-		.pipe(jshint())
 		.pipe(plumber())
 		.pipe(sourcemaps.init())
 		.pipe(gulp.dest('dist/'))
@@ -33,6 +32,12 @@ gulp.task('js', function(){
 		.pipe(sourcemaps.write('.'))
 		.pipe(gulp.dest('dist/'))
 		.pipe(reload({stream: true}));
+});
+
+gulp.task('jshint', function () {
+	gulp.src('src/*.js')
+		.pipe(jshint())
+		.pipe(jshint.reporter());
 });
 
 gulp.task('css', function(){

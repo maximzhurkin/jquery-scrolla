@@ -52,10 +52,10 @@
 					<div class="block animate" data-animate="bounceIn" data-duration="1.0s" data-delay="0.3s"></div>
 				</div>
 				<div class="item">
-					<div class="block animate" data-animate="bounceIn" data-duration="1.0s" data-delay="0.4s" data-offset="50"></div>
+					<div class="block offset animate" data-animate="bounceIn" data-duration="2.0s" data-delay="0.4s" data-offset="100"></div>
 				</div>
 				<div class="item">
-					<div class="block animate" data-animate="bounceIn" data-duration="1.0s" data-delay="0.3s" data-offset="150"></div>
+					<div class="block offset animate" data-animate="bounceIn" data-duration="1.0s" data-delay="0.9s" data-offset="300"></div>
 				</div>
 				<div class="item">
 					<div class="block animate" data-animate="bounceIn" data-duration="1.0s" data-delay="0.2s"></div>
@@ -206,7 +206,11 @@
 				</div>
 			</div>
 		</div>
+		<div class="buttons">
+			<a href="#" class="button animate" data-animate="flipInY" data-duration="2.0s" data-delay="0.1s" id="button-show-window">Open dynamic window</a>
+		</div>
 	</section>
+
 	<section class="section section-code">
 		<div class="wrapper">
 			<p>1. Include <a href="http://daneden.github.io/animate.css/">animate.css</a></p>
@@ -232,8 +236,13 @@
 					&thinsp;&thinsp;mobile: false<br>
 				});
 			</code>
+			<p>Methods:</p>
+			<code>
+				$('.animate').scrolla('bind');
+			</code>
 		</div>
 	</section>
+
 	<footer>
 		<div class="wrapper">
 			<span>Max Zhurkin</span>,
@@ -242,14 +251,67 @@
 		</div>
 	</footer>
 
+	<script id="modal-template" type="text/html">
+		<section class="modal">
+			<div class="modal-container">
+				<div class="modal-middle">
+					<div class="modal-box animate" data-animate="fadeIn" data-duration="0.35s">
+						<h2>Dynamic modal window</h2>
+						<p>$('.animate').scrolla('bind');</p>
+						<div class="boxs group">
+							<div class="item">
+								<div class="block animate" data-animate="bounceIn" data-duration="1.0s" data-delay="0.2s"></div>
+							</div>
+							<div class="item">
+								<div class="block animate" data-animate="bounceIn" data-duration="1.0s" data-delay="0.3s"></div>
+							</div>
+							<div class="item">
+								<div class="block animate" data-animate="bounceIn" data-duration="1.0s" data-delay="0.2s"></div>
+							</div>
+							<div class="item">
+								<div class="block animate" data-animate="bounceIn" data-duration="1.0s" data-delay="0.1s"></div>
+							</div>
+							<div class="item">
+								<div class="block animate" data-animate="bounceIn" data-duration="1.0s" data-delay="0.0s"></div>
+							</div>
+							<div class="item">
+								<div class="block animate" data-animate="bounceIn" data-duration="1.0s" data-delay="0.1s"></div>
+							</div>
+							<div class="item">
+								<div class="block animate" data-animate="bounceIn" data-duration="1.0s" data-delay="0.2s"></div>
+							</div>
+							<div class="item">
+								<div class="block animate" data-animate="bounceIn" data-duration="1.0s" data-delay="0.1s"></div>
+							</div>
+						</div>
+						<div class="buttons">
+							<button class="button modal-close">Close</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</script>
+
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<script src="dist/scrolla.jquery.min.js"></script>
 
 	<script>
-		
+
 	$('.animate').scrolla({
 		mobile: false,
 		once: false
+	});
+
+	$('#button-show-window').click(function() {
+		var template = $('#modal-template').html();
+		$('body').append(template);
+		$('.animate').scrolla('bind');
+		$('section.modal .modal-close').click(function() {
+			$(this).closest('section.modal').remove();
+		});
+
+		return false;
 	});
 
 	</script>

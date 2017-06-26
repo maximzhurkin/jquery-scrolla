@@ -27,7 +27,6 @@ $('.animate').scrolla();
 ```javascript
 $('.animate').scrolla({
     mobile: false, // disable animation on mobiles 
-	once: false // only once animation play on scroll
+    once: false // only once animation play on scroll
 });
 ```
-License: [MIT](http://www.opensource.org/licenses/MIT)

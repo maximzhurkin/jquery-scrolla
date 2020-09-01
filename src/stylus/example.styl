@@ -1,0 +1,154 @@
+color_main = #111111
+color_thin = #f6f8fa
+color_primary = #0074d9
+
+container()
+	margin-left auto
+	margin-right auto
+	padding-left 16px
+	padding-right 16px
+	max-width 640px
+
+html,
+body
+	margin 0
+	padding 0
+	font-family -apple-system, system-ui, "Segoe UI", sans-serif
+	width 100%
+	height 100%
+	color #000
+
+.link
+	color color_primary
+	text-decoration none
+	display inline-block
+	line-height (24 / 16em)
+	border-bottom 2px solid rgba(color_primary, .25)
+	transition border-color .25s ease-in-out
+	&--dotted
+		border-bottom 2px dotted rgba(color_primary, .25)
+	.no-touch &:hover
+		border-color color_primary
+
+.button
+	cursor pointer
+	padding-left 16px
+	padding-right 16px
+	line-height 40px
+	display inline-block
+	border none
+	color #fff
+	font-weight 700
+	font-size (16 / 16em)
+	background-color rgba(color_primary, .8)
+	border-radius 6px
+	transition background-color .25s ease-in-out
+	&:focus
+		outline 0
+	.no-touch &:hover
+		background-color color_primary
+
+
+pre,
+p
+	line-height (24 / 16em)
+
+pre
+	box-sizing border-box
+	width 100%
+	padding 0
+	margin 0
+	overflow auto
+	overflow-y hidden
+	font-size 13px
+	line-height 20px
+	background-color color_thin
+	padding 10px
+	color color_main
+	border-radius 6px
+
+.header
+	margin-bottom 64px
+	padding-top 64px
+	&__container
+		container()
+	&__heading
+		margin-bottom 16px
+		font-size (40 / 16em)
+		font-weight 900
+		line-height (48 / 40em)
+		span
+			display inline-block
+	&__description,
+	&__size
+		margin-bottom 16px
+		font-weight 200
+	&__description
+		font-size (24 / 16em)
+		line-height (30 / 24em)
+	&__size
+		font-size (11 / 16em)
+		line-height (16 / 11em)
+	&__link
+		margin-right 24px
+		display inline-block
+		font-weight 700
+		&:last-child
+			margin-right 0
+
+.usage
+	margin-bottom 64px
+	&__container
+		container()
+	&__heading
+		margin-bottom 24px
+		font-size (30 / 16em)
+		font-weight 700
+		line-height (36 / 30em)
+
+.demo
+	margin-bottom 64px
+	&__container
+		container()
+	&__heading
+		margin-bottom 24px
+		font-size (30 / 16em)
+		font-weight 700
+		line-height (36 / 30em)
+	&__content
+		margin-bottom 24px
+
+.footer
+	padding-bottom 48px
+	&__container
+		container()
+	&__copyright
+		margin-bottom 24px
+		font-size (12 / 16em)
+		font-weight 300
+	&__link
+		margin-right 8px
+		margin-bottom 6px
+		display inline-block
+		&:last-child
+			margin-right 0
+
+.boxes
+	margin-left -8px
+	margin-left -8px
+	display flex
+	flex-wrap wrap
+	justify-content space-between
+	&__item
+		padding 8px
+		width 25%
+		box-sizing border-box
+
+.box
+	width 100%
+	background-color color_primary
+	border-radius 8px
+	&:after
+		padding-bottom 100%
+		content ''
+		display block

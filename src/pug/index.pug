@@ -1,0 +1,109 @@
+- var boxes = []
+
+- for (var x = 0; x < 60; x++)
+	- var duration = (Math.random() * (2.0 - 1.0) + 1.0).toFixed(2);
+	- var delay = (Math.random() * (0.2 - 0.1) + 0.1).toFixed(2)
+	- boxes.push({animate: 'bounceIn', duration: duration, delay: delay })
+
+mixin box(box)
+	.box.animate(data-animate= box.animate, data-duration= box.duration + 's', data-delay= box.delay + 's')
+
+doctype html
+head
+	meta(charset='utf-8')
+	meta(name='description' content='')
+	meta(name='keywords' content='')
+	meta(name='viewport' content='width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no')
+	meta(content='telephone=no' name='format-detection')
+	// if IE meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
+	// if lt IE 9 script(src='https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js')
+	title Scrolla - jQuery plugin for reveal animations when scrolling
+	link(href='favicon.ico' rel='shortcut icon' type='image/x-icon')
+	link(href='css/example.min.css' rel='stylesheet')
+	link(href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.0/animate.min.css' rel='stylesheet')
+	link(href="css/dark.min.css" media='(prefers-color-scheme: dark)' rel='stylesheet')
+body
+	header.header
+		.header__container
+			.header__heading
+				span.animate(data-animate="rubberBand" data-duration="1s" data-delay="0.1s") jQuery Scrolla
+			.header__description Simple jQuery plugin for reveal animations when scrolling
+			.header__size (1kb)
+			.header__links
+				.header__link
+					a.link(href='https://github.com/maximzhurkin/jquery-scrolla/archive/master.zip') Download
+				.header__link
+					a.link(href='https://github.com/maximzhurkin/jquery-scrolla') Github
+	section.usage
+		.usage__container
+			.usage__heading Usage
+			.usage__content
+				p
+					strong Include 
+						a.link(href='http://daneden.github.io/animate.css/', target='_blank') animate.css
+				p
+					pre
+						| &lt;head&gt;
+						|     &lt;link rel=&quot;stylesheet&quot; href=&quot;animate.min.css&quot;&gt;
+						| &lt;/head&gt;
+				p
+					strong Include jQuery and jquery-scrolla
+				p
+					pre
+						| &lt;script src=&quot;jquery.min.js&quot;&gt;&lt;/script&gt;
+						br
+						| &lt;script src=&quot;/dist/js/jquery-scrolla.min.js&quot;&gt;&lt;/script&gt;
+				p
+					strong Add html
+				p
+					pre
+						| &lt;div 
+						|     class=&quot;animate&quot; 
+						|     data-animate=&quot;bounceIn&quot; 
+						|     data-duration=&quot;1s&quot; 
+						|     data-delay=&quot;0.5s&quot; 
+						|     data-offset=&quot;100&quot; 
+						|     data-iteration=&quot;1&quot;&gt;
+						| &lt;/div&gt;
+				p
+					strong Initialize plugin
+				p
+					pre
+						| $(document).ready(function(){
+						|     $('.animate').scrolla();
+						| });
+				p
+					strong Custom settings
+				p
+					pre
+						| $('.animate').scrolla({
+						|     // default
+						|     mobile: false, // disable animation on mobiles
+						|     once: false, // only once animation play on scroll
+						|     animateCssVersion: 4 // used animate.css version (3 or 4)
+						| });
+	section.demo
+		.demo__container
+			.demo__heading Demo
+			.demo__content
+				.boxes
+					each box in boxes
+						.boxes__item
+							+box(box)
+	footer.footer
+		.footer__container
+			.footer__copyright jQuery Scrolla plugin by Max Zhurkin.
+			.footer__links
+				.footer__link
+					a.github-button(href='https://github.com/maximzhurkin' aria-label='Follow @maximzhurkin on GitHub') Follow @maximzhurkin
+				.footer__link
+					a.github-button(href='https://github.com/maximzhurkin/jquery-scrolla' data-icon='octicon-star' aria-label='Star maximzhurkin/jquery-scrolla on GitHub') Star
+				.footer__link
+					a.github-button(href='https://github.com/maximzhurkin/jquery-scrolla/fork' data-icon='octicon-repo-forked' aria-label='Fork maximzhurkin/jquery-scrolla on GitHub') Fork
+				.footer__link
+					a.github-button(href='https://github.com/maximzhurkin/jquery-scrolla/archive/master.zip' data-icon='octicon-cloud-download' aria-label='Download maximzhurkin/jquery-scrolla on GitHub') Download
+	script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js')
+	script(src='https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js')
+	script(src='https://buttons.github.io/buttons.js')
+	script(src='js/jquery.' + plugin + '.min.js')
+	script(src='js/example.min.js')

@@ -1,0 +1,19 @@
+color_main = #E2E0DB
+color_thin = #222426
+color_back = #181A1B
+color_primary = #4AB0FF
+
+html,
+body
+	color color_main
+	background-color color_back
+
+.link
+	color color_primary
+	border-color rgba(color_primary, .25)
+	.no-touch &:hover
+		border-color color_primary
+
+pre
+	color color_main
+	background-color color_thin

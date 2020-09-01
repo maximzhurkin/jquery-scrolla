@@ -7,7 +7,7 @@ Simple jQuery plugin for reveal animations when scrolling
 ### Include [animate.css](http://daneden.github.io/animate.css/)
 ```html
 <head>
-	<link rel="stylesheet" href="animate.min.css">
+  <link rel="stylesheet" href="animate.min.css">
 </head>
 ```
 ### Include jQuery and jquery-scrolla
@@ -18,26 +18,26 @@ Simple jQuery plugin for reveal animations when scrolling
 ### Add html
 ```html
 <div 
-	class="box" 
-	data-animate="bounceIn" 
-	data-duration="1s" 
-	data-delay="0.5s" 
-	data-offset="100" 
-	data-iteration="1">
+  class="box" 
+  data-animate="bounceIn" 
+  data-duration="1s" 
+  data-delay="0.5s" 
+  data-offset="100" 
+  data-iteration="1">
 </div>
 ```
 ### Initialize plugin
 ```javascript
 $(document).ready(function(){
-	$('.box').scrolla();
+  $('.box').scrolla();
 });
 ```
 ### Custom settings
 ```javascript
 $('.box').scrolla({
-	// default
-	mobile: false, // disable animation on mobiles
-	once: false, // only once animation play on scroll
-	animateCssVersion: 4 // used animate.css version (3 or 4)
+  // default
+  mobile: false, // disable animation on mobiles
+  once: false, // only once animation play on scroll
+  animateCssVersion: 4 // used animate.css version (3 or 4)
 });
 ```

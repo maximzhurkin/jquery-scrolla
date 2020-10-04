@@ -3,4 +3,5 @@ $(document).ready ->
 		mobile: false
 		once: false
 		animateCssVersion: 4
+		mobile: true
 	return
